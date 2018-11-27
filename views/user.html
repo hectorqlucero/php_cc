@@ -1,0 +1,112 @@
+<table id="dg"
+       class="easyui-datagrid datagrid-searchable"
+       style="width:100%"
+       data-options="url: '<?php echo $base_url;?>admin/users/json/grid',
+           toolbar:'#toolbar',
+           pagination:true,
+           rownumbers:true,
+           nowrap:false,
+           autoRowHeight: false,
+           fitcolumns:true,
+           autosizeColumn:true,
+           singleSelect:true">
+    <thead>
+        <tr>
+            <th data-options="field:'username',sortable:true">Usuario</th>
+            <th data-options="field:'lastname',sortable:true">Apellido</th>
+            <th data-options="field:'firstname',sortable:true">Nombre</th>
+            <th data-options="field:'dob',sortable:true">Fecha de Nacimiento</th>
+            <th data-options="field:'cell',sortable:true">Cell</th>
+            <th data-options="field:'phone',sortable:true">Telefono</th>
+            <th data-options="field:'fax',sortable:true">Fax</th>
+            <th data-options="field:'email',sortable:true">Email</th>
+            <th data-options="field:'level',sortable:true">Nivel</th>
+            <th data-options="field:'active',sortable:true">Activo?</th>
+        </tr>
+    </thead>
+</table>
+<div id="toolbar" >
+    <a href="javascript:void(0)"
+       class="easyui-linkbutton"
+       data-options="iconCls:'icon-add',plain:true"
+       onclick="defaultGridNewItem()" >Crear</a>
+    <a href="javascript:void(0)"
+       class="easyui-linkbutton"
+       data-options="iconCls:'icon-edit',plain:true"
+       onclick="defaultGridEditItem({})" >Editar</a>
+    <a href="javascript:void(0)"
+       class="easyui-linkbutton"
+       data-options="iconCls:'icon-remove',plain:true"
+       onclick="defaultGridDeleteItem()" >Remover</a>
+    <div style="float: right">
+        <imput class="easyui-textbox" id="datagrid-searchbox" data-options="prompt: 'Busqueda'" title="Buscar">
+    </div>
+</div>
+<div id="dlg" class="easyui-dialog dlg" data-options="closed: true, buttons: '#dlg-buttons'" style="padding: 5px">
+    <form id="fm" class="fm" method="POST" enctype="multipart/form-data" novalidate>
+        <input type="hidden" id="id"  name="id">
+        <div class="fitem">
+            <label for="username">User:</label>
+            <input id="username" name="username" class="easyui-textbox" data-options="required: true">
+        </div>
+        <div class="fitem">
+            <label for="password">Password:</label>
+            <input id="password" name="password" class="easyui-passwordbox" data-options="required: false">
+        </div>
+        <div class="fitem">
+            <label for="firstname">First Name:</label>
+            <input id="firstname" name="firstname" class="easyui-textbox" data-options="required: true">
+        </div>
+        <div class="fitem">
+            <label for="lastname">Last Name:</label>
+            <input id="lastname" name="lastname" class="easyui-textbox" data-options="required: true">
+        </div>
+        <div class="fitem">
+            <label for="dob">Date of Birth:</label>
+            <input id="dob" name="dob" class="easyui-datebox" data-options="required: true">
+        </div>
+        <div class="fitem">
+            <label for="cell">Cell:</label>
+            <input id="cell" name="cell" class="easyui-textbox type-phone" data-options="required: false">
+        </div>
+        <div class="fitem">
+            <label for="phone">Phone:</label>
+            <input id="phone" name="phone" class="easyui-textbox type-phone" data-options="required: false">
+        </div>
+        <div class="fitem">
+            <label for="fax">Fax:</label>
+            <input id="fax" name="fax" class="easyui-textbox type-phone" data-options="required: false">
+        </div>
+        <div class="fitem">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" class="easyui-textbox"
+                   data-options="validType:'email',required:false,width:'200px'">
+        </div>
+        <div class="fitem">
+            <label for="level">User type:</label>
+            <select id="level" class="easyui-combobox" name="level" style="width:200px;">
+                <option value=""></option>
+                <option value="A">Administrador</option>
+                <option value="U">Usuario</option>
+            </select>
+        </div>
+        <div style="margin-bottom:3px">
+            <input class="easyui-radiobutton" id="active" name="active" value="T" data-options="label:'Activo',labelPosition:'before'">
+        </div>
+        <div style="margin-bottom:3px">
+            <input class="easyui-radiobutton" id="active" name="active" value="F" data-options="label:'Inactivo',labelPosition:'before'">
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="javascript:void(0)"
+       class="easyui-linkbutton"
+       data-options="iconCls: 'icon-ok'"
+       onclick="defaultGridSaveItem()">Postear</a>
+    <a href="javascript:void(0)"
+       class="easyui-linkbutton"
+       data-options="iconCls: 'icon-cancel'"
+       onclick="defaultGridDialogClose()">Cancelar</a>
+</div>
+<script type="text/javascript" src="<?php echo $base_url;?>js/defaultGrid.js"></script>
+</script>
