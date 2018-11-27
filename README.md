@@ -8,14 +8,12 @@ Instalar:
 PHP con PDO
 Apache
 MySQL
-Flight Framework: http://flightphp.com
 
 Pasos a seguir:
 1. Instalar PHP con PDO
 2. Instalar Apache
 3. Instalar MySQL
-4. Instalar Flight Framework
-5. Crear la base de datos con el script en el folder "sql"
-6. En el folder "config" programa "config.php" - Actualizar con los datos pertinentes ex. Password de la base de datos, nombre del sitio, Zona de tiempo etc....
+4. Crear la base de datos con el script en el folder "sql"
+5. En el folder "config" programa "config.php" - Actualizar con los datos pertinentes ex. Password de la base de datos, nombre del sitio, Zona de tiempo etc....
 
 Suerte y espero disfruten de este codigo...
