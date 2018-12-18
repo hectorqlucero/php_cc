@@ -7,7 +7,6 @@ date_default_timezone_set('America/Los_Angeles');
 
 session_start();
 
-
 //start user logged on
 $user = NULL;
 if(isset($_SESSION['user_id'])) {
